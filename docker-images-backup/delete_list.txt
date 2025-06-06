@@ -1,0 +1,53 @@
+Deleted Images:
+untagged: nginx:latest
+untagged: nginx@sha256:91734281c0ebfc6f1aea979cffeed5079cfe786228a71cc6f1f46a228cde6e34
+untagged: registry.docker.io:5000/nginx:v1.27.4
+untagged: registry.docker.io:5000/nginx@sha256:d2f1bb1fa588bd0e730d45736e5b60fb182d194fe52f3264074bacb1d0c97037
+
+untagged: calico/node:v3.29.1
+untagged: calico/node@sha256:a819b2cb3dbeaa3849e99f40a5af60641bedc4d063456a718ad089ef38250389
+untagged: registry.docker.io:5000/node:v3.29.1
+untagged: registry.docker.io:5000/node@sha256:aeeaedbed4e066951ef21c227507271ffafc04099ed4a501d025ed2675a425e9
+
+untagged: ghcr.io/flannel-io/flannel-cni-plugin:v1.6.2-flannel1
+untagged: ghcr.io/flannel-io/flannel-cni-plugin@sha256:f1812994f0edbcb5bb5ccb63be2147ba6ad10e1faaa7ca9fcdad4f441739d84f
+untagged: registry.docker.io:5000/flannel-cni-plugin:v1.6.2-flannel1
+untagged: registry.docker.io:5000/flannel-cni-plugin@sha256:eace2bd0fa91aef181f8b5b4b2088c4988462c5e6ae94c58afc99e8bda6fbe1b
+
+untagged: ubuntu/apache2:latest
+untagged: ubuntu/apache2@sha256:590b7b0f55fbfaf363be800d938247addfdfd461371082bc0cb56ac7dbc5876b
+untagged: calico/kube-controllers:v3.29.1
+untagged: calico/kube-controllers@sha256:44acab15d22ed702aec4deca59bdc15fdddc1da49b865a370d3978fcf5730569
+untagged: registry.docker.io:5000/kube-controllers:v3.29.1
+untagged: registry.docker.io:5000/kube-controllers@sha256:20c8004bae41fc6b78bef229b435eb99f48e3cbe1ff67b70d57c3e4b832c8f73
+
+untagged: antrea/antrea-agent-ubuntu:latest
+untagged: antrea/antrea-agent-ubuntu@sha256:ea414fbf7b6c9165b7c4f920a29084bb4e7ba280292242f895cc97ccc284b1e2
+untagged: registry.docker.io:5000/antrea-agent-ubuntu:latest
+untagged: registry.docker.io:5000/antrea-agent-ubuntu@sha256:57ac3654ed45c8a092b4246da7a66a8bf01b2e845ee3ea5ac860012aab436c40
+
+untagged: mysql:latest
+untagged: mysql@sha256:146682692a3aa409eae7b7dc6a30f637c6cb49b6ca901c2cd160becc81127d3b
+untagged: registry.docker.io:5000/mysql:latest
+untagged: registry.docker.io:5000/mysql@sha256:01852a15539f5b979ca5f944e993b3c4b7c99000b69480d6b7b5d0d0f4ebee8e
+
+untagged: calico/cni:v3.29.1
+untagged: calico/cni@sha256:fb35441ca9be59ebc2a3a00e6951f879d0edbecb3c1314defa3c4e927f4628c1
+untagged: registry.docker.io:5000/cni:v3.29.1
+untagged: registry.docker.io:5000/cni@sha256:0f28c2e3158e40e59207bed46096acf65ab3e8abbbc1855e1e6e4f17f588527a
+untagged: registry.cn-hangzhou.aliyuncs.com/google_containers/nginx-ingress-controller:v1.12.0
+untagged: registry.cn-hangzhou.aliyuncs.com/google_containers/nginx-ingress-controller@sha256:01d7a2db5d6e07f06eff59e1db4153a2164a5288fd231698e2c2b5b9d0b9f299
+untagged: registry.docker.io:5000/nginx-ingress-controller:v1.12.0
+untagged: registry.docker.io:5000/nginx-ingress-controller@sha256:5c06930ada97e5df24a3ec60c55723acf78d3177086922ba6352b4f863a39649
+
+untagged: antrea/antrea-controller-ubuntu:latest
+untagged: antrea/antrea-controller-ubuntu@sha256:a5f1005c0149de6e193ae85a3b9a4f327f70060f3ec6d486548f3cebc56a1e83
+untagged: registry.docker.io:5000/antrea-controller-ubuntu:latest
+untagged: registry.docker.io:5000/antrea-controller-ubuntu@sha256:62cc962bb47932e89914b661a5ae712de9ae9db06d3acd5f8609c01a95782673
+
+untagged: registry:latest
+untagged: registry@sha256:a3d8aaa63ed8681a604f1dea0aa03f100d5895b6a58ace528858a7b332415373
+untagged: registry.cn-hangzhou.aliyuncs.com/google_containers/kube-webhook-certgen:v1.5.0
+untagged: registry.cn-hangzhou.aliyuncs.com/google_containers/kube-webhook-certgen@sha256:f3822f7d46151642044ef1aef046249bc274f563e62204cb0767ac4a41a902ed
+untagged: registry.docker.io:5000/kube-webhook-certgen:v1.5.0
+untagged: registry.docker.io:5000/kube-webhook-certgen@sha256:f1102fe242f1c34bfa763ece6e605dd5dc02a72fb8becbf6f3219b2e178a6da4
