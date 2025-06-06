@@ -1,0 +1,159 @@
+
+{
+
+    "registry-mirrors": [
+        "https://docker.m.daocloud.io",
+        "https://noohub.ru",
+        "https://huecker.io",
+        "https://dockerhub.timeweb.cloud",
+        "https://docker.rainbond.cc"
+    ]
+
+    "registry-mirrors": [
+        "https://docker.211678.top",
+        "https://docker.1panel.live",
+        "https://hub.rat.dev",
+        "https://docker.m.daocloud.io",
+        "https://do.nark.eu.org",
+        "https://dockerpull.com",
+        "https://dockerproxy.cn",
+        "https://docker.awsl9527.cn"
+    ]
+
+
+    "registry-mirrors": [
+        "https://docker.registry.cyou",
+        "https://docker-cf.registry.cyou",
+        "https://dockercf.jsdelivr.fyi",
+        "https://docker.jsdelivr.fyi",
+        "https://dockertest.jsdelivr.fyi",
+        "https://mirror.aliyuncs.com",
+        "https://dockerproxy.com",
+        "https://mirror.baidubce.com",
+        "https://docker.m.daocloud.io",
+        "https://docker.nju.edu.cn",
+        "https://docker.mirrors.sjtug.sjtu.edu.cn",
+        "https://docker.mirrors.ustc.edu.cn",
+        "https://mirror.iscas.ac.cn",
+        "https://docker.rainbond.cc"
+    ],
+    "insecure-registries": [
+      "registry.docker.io:5000"
+    ]
+
+}
+
+
+"registry-mirrors": [
+    "https://5a1suh23.mirror.aliyuncs.com",
+    "https://hub.rat.dev",
+    "https://dockerhub.icu"
+    "https://doublezonline.cloud",
+    "https://docker.mrxn.net",
+    "https://docker.anyhub.us.kg",  
+    "https://dislabaiot.xyz",
+    "https://docker.fxxk.dedyn.io"
+
+],
+"insecure-registries": [
+      "registry.docker.io:5000"
+]
+
+
+"registry-mirrors": [
+    "https://docker-0.unsee.tech",
+    "https://docker-cf.registry.cyou",
+    "https://docker.1panel.live",
+    "http://hub-mirror.c.163.com",
+    "https://registry.docker-cn.com",
+    "https://pee6w651.mirror.aliyuncs.com"
+],
+"insecure-registries": [
+      "registry.docker.io:5000"
+]
+
+sudo cat <<EOF> /etc/docker/daemon.json
+{
+ "registry-mirrors": [
+     "https://docker-0.unsee.tech",
+     "https://docker-cf.registry.cyou",
+     "https://docker.1panel.live",
+     "http://hub-mirror.c.163.com",
+     "https://registry.docker-cn.com",
+     "https://pee6w651.mirror.aliyuncs.com"
+ ],
+ "insecure-registries": [
+      "registry.docker.io:5000"
+    ]
+
+}
+EOF
+
+
+"registry-mirrors": [
+    "https://0c105db5188026850f80c001def654a0.mirror.swr.myhuaweicloud.com",
+    "https://5tqw56kt.mirror.aliyuncs.com",
+    "https://docker.ipanel.live",
+    "http://mirrors.ustc.edu.cn/",
+    "http://mirror.azure.cn/",
+    "https://hub.rat.dev/",
+    "https://docker.cky1.me/",
+    "https://docker.chenby.cn",
+    "https://docker.hpcloud.cloud",
+    "https://docker.m.daocloud.io"
+]
+
+"registry-mirrors": [
+    "https://docker.mirrors.ustc.edu.cn",  
+    "http://hub.staronearth.win",
+    "http://hammal.staronearth.win"
+]
+ 
+"registry-mirrors": [
+    "https://hub.littlediary.cn"
+	"https://hub.crdz.gq"
+	"https://docker.unsee.tech"
+	"https://docker.kejilion.pro"
+	"https://registry.dockermirror.com"
+	"https://hub.rat.dev"
+	"https://dhub.kubesre.xyz"
+	"https://docker.nastool.de"
+	"https://docker.udayun.com"
+	"https://docker.rainbond.cc"
+	"https://hub.geekery.cn"
+	"https://docker.1panelproxy.com"
+]
+
+
+  "registry-mirrors": [
+    "https://docker.hpcloud.cloud",
+    "https://docker.m.daocloud.io",
+    "https://docker.unsee.tech",
+    "https://docker.1panel.live",
+    "http://mirrors.ustc.edu.cn",
+    "https://docker.chenby.cn",
+    "http://mirror.azure.cn",
+    "https://dockerpull.org",
+    "https://dockerhub.icu",
+    "https://hub.rat.dev",
+    "https://proxy.1panel.live",
+    "https://docker.1panel.top",
+    "https://docker.m.daocloud.io",
+    "https://docker.1ms.run",
+    "https://docker.ketches.cn"
+  ]
+
+
+
+sed -i '$ a deb http://mirrors.huaweicloud.com/repository/ubuntu/ focal main restricted universe multiverse' /etc/apt/sources.list 
+sed -i '$ a deb http://mirrors.huaweicloud.com/repository/ubuntu/ focal-updates main restricted universe multiverse' /etc/apt/sources.list
+sed -i '$ a deb http://mirrors.huaweicloud.com/repository/ubuntu/ focal-backports main restricted universe multiverse' /etc/apt/sources.list
+sed -i '$ a deb http://mirrors.huaweicloud.com/repository/ubuntu/ focal-security main restricted universe multiverse' /etc/apt/sources.list
+
+
+cat <<EOF> /etc/apt/sources.list
+deb http://mirrors.huaweicloud.com/repository/ubuntu/ focal main restricted universe multiverse
+deb http://mirrors.huaweicloud.com/repository/ubuntu/ focal-updates main restricted universe multiverse
+deb http://mirrors.huaweicloud.com/repository/ubuntu/ focal-backports main restricted universe multiverse
+deb http://mirrors.huaweicloud.com/repository/ubuntu/ focal-security main restricted universe multiverse
+EOF
