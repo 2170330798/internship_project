@@ -1,0 +1,42 @@
+{
+  "code": 0,
+  "msg": "Success",
+  "data": {
+      "page": -1,
+      "pageSize": 10,
+      "total": 287,
+      "list": [
+                {
+                  "id": "100",
+                  "employeeName": "李康",
+                  "email": "",
+                  "phoneNumber": "",
+                  "avatar": "",
+                  "leaderEmployeeId": "132",
+                  "employeeType": 1,
+                  "joinTime": "",
+                  "isEmployed": 1,
+                  "isFrozen": -1,
+                  "isActivated": 1,
+                  "departmentId": "203",
+                  "department": {
+                    "id": "203",
+                    "departmentName": "NMFusion",
+                    "departmentParentId": "",
+                    "leaderUserId": "",
+                    "departmentOrder": 0,
+                    "isEnable": 0
+                  },
+                  "employeeFeishu": {
+                    "id": "100",
+                    "feishuUnionId": "",
+                    "feishuOpenId": "",
+                    "createdAt": "2025-03-24 15:42:52",
+                    "updatedAt": "2025-03-28 14:29:19"
+                  },
+                  "createdAt": "2025-05-30 18:30:02",
+                  "updatedAt": "2025-05-30 18:30:02"
+                }
+        ]
+      }
+}
