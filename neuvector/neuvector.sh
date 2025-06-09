@@ -11,12 +11,15 @@
 #####################################################
 
 
+# 获取当前路径
+
+
 # 基础配置:
-export NEUVECTOR_VERSION="5.3.2"
+export VERSION="5.3.2"
 export DockerHub="registry.docker.io:5000"
 export DockerHubIp="10.10.6.204"
-export SourceUrl="https://registry.docker.io/neuvector/manifests/main/kubernetes/${VERSION}/neuvector-k8s.yaml"
-export DestPath="/home/nullmax/tangjunxi/neuvector/neuvector-k8s.yaml"
+export SourceUrl="http://registry.docker.io/neuvector/kubernetes/${VERSION}/neuvector-k8s.yaml"
+export DestPath="$(pwd)/neuvector-k8s.yaml"
 
 # 创建命名空间和需要的账号:
 kubectl create namespace neuvector
