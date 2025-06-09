@@ -207,12 +207,12 @@ if __name__ == "__main__":
     delay_time = 1 # 1s
     # 设置文件参数
     input_excle_file_dir = "/home/ubuntu/Downloads"
-    input_excle_file_name = "assets_list.xlsx"
+    input_excle_file_name = "orthers_info2.xlsx"
     output_excel_file_dir = "/home/ubuntu/Downloads"  
-    output_excel_file_name = "dp_info.xlsx"
+    output_excel_file_name = "orthers_info1.xlsx"
     column_to_search = 0             # 可以是列名(如"姓名")或列索引(从0开始）
-    search_keyword = "DP"           # 要搜索的关键字
-    sheet_name = "显示器"      # 查找的表
+    search_keyword = ""           # 要搜索的关键字
+    sheet_name = "Sheet1"      # 查找的表
 
     # 设置请求URL
     url = "https://devops-api.nullmax.net/asset/api/v1/fixed"
@@ -223,7 +223,7 @@ if __name__ == "__main__":
         "accept": "application/json, text/plain, */*",
         "accept-encoding": "gzip, deflate, br",
         "accept-language": "en-US,en;q=0.9",
-        "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTE1OTQwOTksImlhdCI6MTc0ODk0MjA5OSwiaXNzIjoi5ZSQ5L-K5ZacIiwicm9sZV9pZCI6IlI1NzIwMzc3NzcyMjE4NzgwOCIsInN1YiI6ImxvZ2luIiwidXNlcl9pZCI6IjQyNiIsIndhcmVob3VzZV9pZHMiOnsiVzU3MjAzNzcwMzA5NzM4NDk2IjoiVzU3MjAzNzcwMzA5NzM4NDk2In19.T-zlIM_pevVLjQsi5u2OnnijeJNNdXhkIFMaRW2MBj0",
+        "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTIwMjg0NDksImlhdCI6MTc0OTM3NjQ0OSwiaXNzIjoi5ZSQ5L-K5ZacIiwicm9sZV9pZCI6IlI1NzIwMzc3NzcyMjE4NzgwOCIsInN1YiI6ImxvZ2luIiwidXNlcl9pZCI6IjQyNiIsIndhcmVob3VzZV9pZHMiOnsiVzU3MjAzNzcwMzA5NzM4NDk2IjoiVzU3MjAzNzcwMzA5NzM4NDk2In19.HN41JNNFTBZu0blroR8kkAjHjUTRMppZ611adaTQZ2A",
         "content-type": "application/json",
         "origin": "https://devops.nullmax.net",
         "referer": "https://devops.nullmax.net/",
@@ -260,25 +260,25 @@ if __name__ == "__main__":
         search_column=column_to_search, 
         keyword=search_keyword,
         sheet_name=sheet_name, # 可以修改为上面注释中的任意一种形式
-        is_save=True,
+        is_save=False,
         skip_rows=skip_rows
     )
     
     for index, row in asset_data.iterrows():
         # 购入
         if WAY == PURCHASE:
-            print(f"资产名称: {row['资产名称']},  型号: {row['型号']},  购入日期: {row['验收编号']}, S/N号: {row['S/N号']}, 资产编号: {row['编号']}")
+            print(f"资产名称: {row['资产名称']},  型号: {row['型号']},  购入日期: {convert_date(ensure_string(row['验收编号']))}, S/N号: {row['S/N码']}, 资产编号: {row['编号']}")
             payload = set_payload(asset_amount = 0.0, 
                                   asset_code = row['编号'], 
-                                  asset_name = "显示器", 
+                                  asset_name = row['资产名称'], 
                                   asset_type = 1, 
-                                  category_id = "C57231373712162816", 
+                                  category_id = "C57229182348394496", 
                                   purchase_date = row['验收编号'], 
-                                  serial_number = "", 
-                                  specifications = "", 
+                                  serial_number = row['S/N码'], 
+                                  specifications = row['型号'], 
                                   warehouse_id = "W57203770309738496", 
                                   warranty_period_date = "",
-                                  remark= "")
+                                  remark= row['备注'])
         elif WAY == RENT:
              # 租赁
             print(f"资产名称: {row['资产名称']},  型号: {row['型号']},  租赁日期: {row['租赁日期']}, S/N号: {row['S/N号']}, 资产编号: {row['编号']}")
@@ -307,9 +307,9 @@ if __name__ == "__main__":
                                   warehouse_id = "W57203770309738496", 
                                   warranty_period_date = "",
                                   remark="岩山赠与")
-        # print(payload)
-        # send_request(url, headers, payload)
-        # time.sleep(delay_time)  # 休眠1秒
+        print(payload)
+        send_request(url, headers, payload)
+        time.sleep(delay_time)  # 休眠1秒
         
 
 

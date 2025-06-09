@@ -52,12 +52,12 @@ if __name__ == '__main__':
     base_url = "https://devops-api.nullmax.net/asset/api/v1/fixed/list"
     params = {
         "page": 1,
-        "pageSize": 282,
+        "pageSize": 22,
         "name": "",
         "warehouseId": "",
         "assetType": "",
         "assetCode": "",
-        "categoryId": "C57228952616271872",
+        "categoryId": "C57229182348394496",
         "employeeId": "",
         "departmentId": "",
         "assetState": "",
@@ -71,7 +71,7 @@ if __name__ == '__main__':
         "accept": "application/json, text/plain, */*",
         "accept-encoding": "gzip, deflate, br",
         "accept-language": "en-US,en;q=0.9",
-        "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTE3ODk0MDAsImlhdCI6MTc0OTEzNzQwMCwiaXNzIjoi5ZSQ5L-K5ZacIiwicm9sZV9pZCI6IlI1NzIwMzc3NzcyMjE4NzgwOCIsInN1YiI6ImxvZ2luIiwidXNlcl9pZCI6IjQyNiIsIndhcmVob3VzZV9pZHMiOnsiVzU3MjAzNzcwMzA5NzM4NDk2IjoiVzU3MjAzNzcwMzA5NzM4NDk2In19.o-xpaDJj1wW8Xv8W2rUMIs5PMsF9ZhUz-s4alqEVCl8",
+        "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTIwMjg0NDksImlhdCI6MTc0OTM3NjQ0OSwiaXNzIjoi5ZSQ5L-K5ZacIiwicm9sZV9pZCI6IlI1NzIwMzc3NzcyMjE4NzgwOCIsInN1YiI6ImxvZ2luIiwidXNlcl9pZCI6IjQyNiIsIndhcmVob3VzZV9pZHMiOnsiVzU3MjAzNzcwMzA5NzM4NDk2IjoiVzU3MjAzNzcwMzA5NzM4NDk2In19.HN41JNNFTBZu0blroR8kkAjHjUTRMppZ611adaTQZ2A",
         "origin": "https://devops.nullmax.net",
         "referer": "https://devops.nullmax.net/",
         "sec-ch-ua": '"Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"',
@@ -82,5 +82,5 @@ if __name__ == '__main__':
         "sec-fetch-site": "same-site",
         "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36"
     }
-    output_file = "/home/ubuntu/Downloads/zj_info1.xlsx"
+    output_file = "/home/ubuntu/Downloads/orthers_info1.xlsx"
     send_request(url=url, headers=headers, output_file=output_file)

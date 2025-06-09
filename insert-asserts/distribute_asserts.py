@@ -47,7 +47,7 @@ def update_asset_allocation(asset_id="", employee_id="", warehouse_id="", remark
     
     # 请求头
     headers = {
-        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTE1OTQwOTksImlhdCI6MTc0ODk0MjA5OSwiaXNzIjoi5ZSQ5L-K5ZacIiwicm9sZV9pZCI6IlI1NzIwMzc3NzcyMjE4NzgwOCIsInN1YiI6ImxvZ2luIiwidXNlcl9pZCI6IjQyNiIsIndhcmVob3VzZV9pZHMiOnsiVzU3MjAzNzcwMzA5NzM4NDk2IjoiVzU3MjAzNzcwMzA5NzM4NDk2In19.T-zlIM_pevVLjQsi5u2OnnijeJNNdXhkIFMaRW2MBj0",
+        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTIwMjg0NDksImlhdCI6MTc0OTM3NjQ0OSwiaXNzIjoi5ZSQ5L-K5ZacIiwicm9sZV9pZCI6IlI1NzIwMzc3NzcyMjE4NzgwOCIsInN1YiI6ImxvZ2luIiwidXNlcl9pZCI6IjQyNiIsIndhcmVob3VzZV9pZHMiOnsiVzU3MjAzNzcwMzA5NzM4NDk2IjoiVzU3MjAzNzcwMzA5NzM4NDk2In19.HN41JNNFTBZu0blroR8kkAjHjUTRMppZ611adaTQZ2A",
         "Content-Type": "application/json",
         "Origin": "https://devops.nullmax.net",
         "Referer": "https://devops.nullmax.net/",
@@ -255,13 +255,13 @@ def search_and_save_excel(input_file, output_file, search_column, keyword,
 if __name__ == "__main__":
     # # 表1配置
     # table1_path = "/home/ubuntu/Downloads/assets_list.xlsx"
-    # table1_sheet = "硬盘"  # 指定sheet名称或None使用第一个sheet
-    # table1_columns = ["编号", "使用人 (人员 )"]  # 要读取的列
-    # table1_status_column = "编号"  # 筛选条件的列
-    # table1_status_value = "HD"  # 筛选条件的值
+    # table1_sheet = "其他"  # 指定sheet名称或None使用第一个sheet
+    # table1_columns = ["编号", "使用人 (人员 )", "说明"]  # 要读取的列
+    # table1_status_column = "说明"  # 筛选条件的列
+    # table1_status_value = "其他设备"  # 筛选条件的值
     
     # # 表2配置
-    # table2_path = "/home/ubuntu/Downloads/dh_info.xlsx"
+    # table2_path = "/home/ubuntu/Downloads/orthers_info1.xlsx"
     # table2_sheet = "Sheet1"  # 指定sheet名称或None使用第一个sheet
     # table2_columns = ["id", "warehouseId", "assetCode"]  # 要读取的列
     
@@ -271,7 +271,7 @@ if __name__ == "__main__":
     # table3_columns = ["id", "employeeName"]  # 要读取的列
     
     # # 输出文件路径
-    # output_path = "/home/ubuntu/Downloads/merge_info6.xlsx"
+    # output_path = "/home/ubuntu/Downloads/merge_info12.xlsx"
     
     # # 执行比较和合并
     # compare_and_merge(
@@ -285,12 +285,12 @@ if __name__ == "__main__":
     delay_time = 1
     # 设置文件参数
     input_excle_file_dir = "/home/ubuntu/Downloads"
-    input_excle_file_name = "assets_list.xlsx"
+    input_excle_file_name = "merge_info12.xlsx"
     # output_excel_file_dir = "/home/ubuntu/Downloads"  
     # output_excel_file_name = "low_network_switch.xlsx"
     column_to_search = 0           # 可以是列名(如"姓名")或列索引( 从0开始)
-    search_keyword = "DP"           # 要搜索的关键字
-    sheet_name = "显示器"      # 查找的表
+    search_keyword = ""           # 要搜索的关键字
+    sheet_name = "Sheet1"      # 查找的表
     skip_rows = 0
     asset_data = search_and_save_excel(
         input_file=input_excle_file_dir+'/'+input_excle_file_name, 
@@ -309,6 +309,6 @@ if __name__ == "__main__":
         # employee_id = "454"
         # warehouse_id = "W57203770309738496"
         # remark = "资产重新分配"
-        # update_asset_allocation(row['id'], row['employeeId'], row['warehouseId'], remark="")
-        # time.sleep(delay_time)  # 休眠1秒
+        update_asset_allocation(row['id'], row['employeeId'], row['warehouseId'], remark="")
+        time.sleep(delay_time)  # 休眠1秒
 

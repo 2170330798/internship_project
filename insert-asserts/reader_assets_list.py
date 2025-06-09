@@ -185,10 +185,10 @@ if __name__ == "__main__":
     input_excle_file_dir = "/home/ubuntu/Downloads"
     input_excle_file_name = "assets_list.xlsx"
     output_excel_file_dir = "/home/ubuntu/Downloads"  
-    output_excel_file_name = "zj_info2.xlsx"
+    output_excel_file_name = "orthers_info2.xlsx"
     column_to_search = 0             # 可以是列名(如"姓名")或列索引(从0开始）
     search_keyword = ""           # 要搜索的关键字
-    sheet_name = "主机"      # 查找的表
+    sheet_name = "其他"      # 查找的表
 
     # 指定要搜索的工作表(可选):
     # sheet_to_search = None       # 搜索第一个工作表(默认)
@@ -203,7 +203,7 @@ if __name__ == "__main__":
         sheet_name=sheet_name, # 可以修改为上面注释中的任意一种形式
         is_save=True,
         skip_rows=skip_rows,
-        format_column="主机编号", 
+        format_column="编号", 
         uppercase=True,
         append_mode=False
     )
@@ -212,7 +212,7 @@ if __name__ == "__main__":
     for index, row in asset_data.iterrows():
         # 购入
         if WAY == PURCHASE:
-             print(f"资产名称: {'主机'}, 资产编码: {str(row['主机编号'])}")
+             print(f"资产名称: {str(row['型号'])},  采购日期: {str(row['验收编码'])},  资产编码: {str(row['编号'])}, 单价： {row['金额']}")
             #print(f"资产名称: {'显示器'}, 资产编码: {str(row['编号'])}")
             
         elif WAY == RENT:
