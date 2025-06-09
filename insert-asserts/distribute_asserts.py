@@ -1,3 +1,4 @@
+import math
 import requests
 import json
 import pandas as pd
@@ -29,7 +30,10 @@ def ensure_float(value):
         raise ValueError(f"无法将{value}转换为浮点数")
 
 def ensure_int(value):
-    return int(value) if not isinstance(value, int) else value
+     if pd.isna(value) or (isinstance(value, float) and math.isnan(value)):
+        return 0  # 或者返回一个默认值如 0
+     else:
+        return int(value) if not isinstance(value, int) else value
 
 
 def update_asset_allocation(asset_id="", employee_id="", warehouse_id="", remark=""):
@@ -61,7 +65,7 @@ def update_asset_allocation(asset_id="", employee_id="", warehouse_id="", remark
     # 请求体
     payload = {
         "id": ensure_string(asset_id),
-        "employeeId": ensure_string(employee_id),
+        "employeeId": ensure_string(ensure_int(employee_id)),
         "warehouseId": ensure_string(warehouse_id),
         "remark": ensure_string(remark)
     }
@@ -303,7 +307,7 @@ if __name__ == "__main__":
     )
     
     for index, row in asset_data.iterrows():
-        print(f"资产ID: {row['id']},  仓库ID: {row['warehouseId']},  使用人: {row['employeeId']},  资产编号: {row['编号']}")
+        print(f"资产ID: {row['id']},  仓库ID: {row['warehouseId']},  使用人: {ensure_int(row['employeeId'])},  资产编号: {row['编号']}")
         # 替换为实际的资产ID、员工ID和仓库ID
         # asset_id = "AF57232242631508000"
         # employee_id = "454"
